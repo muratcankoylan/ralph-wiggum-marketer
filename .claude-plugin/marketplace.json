@@ -1,0 +1,11 @@
+{
+  "name": "ralph-wiggum-marketer",
+  "description": "Autonomous AI copywriter that learns your voice and iterates until the content is actually good",
+  "plugins": [
+    {
+      "name": "ralph-wiggum-marketer",
+      "path": ".",
+      "description": "Quality-focused AI copywriter using the Ralph Wiggum pattern"
+    }
+  ]
+}
