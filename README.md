@@ -6,28 +6,34 @@ Uses the [Ralph Wiggum pattern](https://ghuntley.com/ralph/) - an iterative AI l
 
 ## Installation
 
-### Option 1: Install from GitHub (Recommended)
+### Option 1: Add as Marketplace (Recommended)
 
 ```bash
-# In Claude Code, run:
-/install-plugin https://github.com/muratcankoylan/ralph-wiggum-marketer
+# In Claude Code, add the repo as a marketplace:
+/plugin marketplace add muratcankoylan/ralph-wiggum-marketer
+
+# Then install the plugin:
+/plugin install ralph-wiggum-marketer@muratcankoylan-ralph-wiggum-marketer
 ```
 
-### Option 2: Clone and Link
+### Option 2: Test Locally (For Development)
 
 ```bash
 # Clone the repo
 git clone https://github.com/muratcankoylan/ralph-wiggum-marketer.git
 
-# Link it to Claude Code
-claude plugins link ./ralph-wiggum-marketer
+# Run Claude Code with the plugin directory
+claude --plugin-dir ./ralph-wiggum-marketer
 ```
 
-### Option 3: Manual Installation
+### Option 3: Interactive Plugin Manager
 
-Copy this directory to your Claude Code plugins folder:
-- macOS/Linux: `~/.config/claude-code/plugins/`
-- Windows: `%APPDATA%\claude-code\plugins\`
+```bash
+# Open the plugin manager:
+/plugin
+
+# Browse, search, and install from the interactive UI
+```
 
 ## Quick Start
 
