@@ -41,13 +41,10 @@ claude --plugin-dir ./ralph-wiggum-marketer
 # 1. Initialize a new content project
 /ralph-init
 
-# 2. Start the autonomous copywriter loop
-/ralph-marketer --max-iterations 25
-
-# 3. Check progress anytime
+# 2. Check progress anytime
 /ralph-status
 
-# 4. Cancel if needed
+# 3. Cancel if needed
 /ralph-cancel
 ```
 
@@ -67,26 +64,26 @@ claude --plugin-dir ./ralph-wiggum-marketer
 │                     MULTI-AGENT ECOSYSTEM                        │
 ├──────────────────────────────────────────────────────────────────┤
 │                                                                  │
-│  ┌─────────────┐   ┌─────────────┐   ┌─────────────┐            │
-│  │ TrendScout  │   │  Research   │   │  Product/   │            │
-│  │   Agent     │   │   Agent     │   │  Marketing  │            │
-│  └──────┬──────┘   └──────┬──────┘   └──────┬──────┘            │
+│  ┌─────────────┐   ┌─────────────┐   ┌─────────────┐             │
+│  │ TrendScout  │   │  Research   │   │  Product/   │             │
+│  │   Agent     │   │   Agent     │   │  Marketing  │             │
+│  └──────┬──────┘   └──────┬──────┘   └──────┬──────┘             │
 │         │                 │                 │                    │
 │         ▼                 ▼                 ▼                    │
-│  ┌────────────────────────────────────────────────────┐         │
-│  │              SQLite Content Database               │         │
-│  │  • trends     • research     • communications      │         │
-│  └────────────────────────┬───────────────────────────┘         │
+│  ┌────────────────────────────────────────────────────┐          │
+│  │              SQLite Content Database               │          │
+│  │  • trends     • research     • communications      │          │
+│  └────────────────────────┬───────────────────────────┘          │
 │                           │                                      │
 │                           ▼                                      │
-│  ┌────────────────────────────────────────────────────┐         │
-│  │           RALPH THE COPYWRITER                     │         │
+│  ┌────────────────────────────────────────────────────┐          │
+│  │           RALPH THE COPYWRITER                     │          │
 │  │                                                     │         │
-│  │   Reads inputs → Plans content → Writes drafts     │         │
-│  │   → Reviews & iterates → Publishes                 │         │
+│  │   Reads inputs → Plans content → Writes drafts     │          │
+│  │   → Reviews & iterates → Publishes                 │          │
 │  │                                                     │         │
-│  │   Memory: git commits + progress.txt + prd.json    │         │
-│  └────────────────────────────────────────────────────┘         │
+│  │   Memory: git commits + progress.txt + prd.json    │          │
+│  └────────────────────────────────────────────────────┘          │
 │                           │                                      │
 │                           ▼                                      │
 │                    Published Content                             │
@@ -133,17 +130,6 @@ ralph-wiggum-marketer/
 │   └── package.json         # Project package.json template
 └── README.md
 ```
-
-## Content Types
-
-Ralph can create:
-
-| Type | Word Count | Structure |
-|------|------------|-----------|
-| Blog Post | 800-2000 | Hook → Problem → Solution → Proof → CTA |
-| Case Study | 1000-1500 | Challenge → Solution → Results → Quote |
-| Social Post | <280 chars | Hook + Value + CTA + Hashtags |
-| Newsletter | 500-800 | Intro → Summaries → Trend → CTA |
 
 ## Database Schema
 
