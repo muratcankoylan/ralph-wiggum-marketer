@@ -2,7 +2,7 @@
 
 A **Claude Code Plugin** that provides an autonomous AI copywriter for SaaS content marketing.
 
-[Learn more here!]([https://ghuntley.com/ralph/](https://deepwiki.com/muratcankoylan/ralph-wiggum-marketer/1-overview)
+[Learn more here!]([https://deepwiki.com/muratcankoylan/ralph-wiggum-marketer/1-overview]
 
 Uses the [Ralph Wiggum pattern](https://ghuntley.com/ralph/) - an iterative AI loop that ships content while you sleep.
 
