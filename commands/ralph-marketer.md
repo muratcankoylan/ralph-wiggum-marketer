@@ -78,6 +78,29 @@ $ARGUMENTS
 - `--max-iterations <n>`: Stop after N iterations (default: unlimited)
 - `--completion-promise <text>`: Custom completion signal (default: "COMPLETE")
 
+## Initialize Loop State
+
+Before starting your first iteration, create the loop state file so the stop hook can manage iterations:
+
+```bash
+# Parse arguments
+ARGS="$ARGUMENTS"
+MAX_ITER=$(echo "$ARGS" | grep -oP '(?<=--max-iterations )\d+' || echo "999999")
+PROMISE=$(echo "$ARGS" | grep -oP '(?<=--completion-promise )\S+' || echo "COMPLETE")
+
+# Create .claude directory if it doesn't exist
+mkdir -p .claude
+
+# Write loop state file
+cat > .claude/ralph-marketer-loop.local.md << STATEOF
+---
+iteration: 0
+max_iterations: $MAX_ITER
+completion_promise: $PROMISE
+---
+STATEOF
+```
+
 ## Begin
 
 Read the PRD. Find your next task. Ship great content.
