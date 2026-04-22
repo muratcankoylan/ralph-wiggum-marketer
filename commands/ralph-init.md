@@ -19,16 +19,16 @@ Set up a new Ralph Marketer copywriting project in the current directory.
 
 ```bash
 # Create directories
-mkdir -p scripts/ralph content/{drafts,published} data src/{db,content}
+mkdir -p scripts/ralph content/{drafts,published} data scripts/src/{db,content}
 
 # Copy database scripts from plugin
 PLUGIN_ROOT="${CLAUDE_PLUGIN_ROOT}"
-cp "$PLUGIN_ROOT/scripts/src/db/init.js" src/db/
-cp "$PLUGIN_ROOT/scripts/src/db/seed.js" src/db/
-cp "$PLUGIN_ROOT/scripts/src/db/status.js" src/db/
-cp "$PLUGIN_ROOT/scripts/src/db/query.js" src/db/
-cp "$PLUGIN_ROOT/scripts/src/content/list.js" src/content/
-cp "$PLUGIN_ROOT/scripts/src/test.js" src/
+cp "$PLUGIN_ROOT/scripts/src/db/init.js" scripts/src/db/
+cp "$PLUGIN_ROOT/scripts/src/db/seed.js" scripts/src/db/
+cp "$PLUGIN_ROOT/scripts/src/db/status.js" scripts/src/db/
+cp "$PLUGIN_ROOT/scripts/src/db/query.js" scripts/src/db/
+cp "$PLUGIN_ROOT/scripts/src/content/list.js" scripts/src/content/
+cp "$PLUGIN_ROOT/scripts/src/test.js" scripts/src/
 
 # Copy Ralph templates
 cp "$PLUGIN_ROOT/templates/prd.json" scripts/ralph/
