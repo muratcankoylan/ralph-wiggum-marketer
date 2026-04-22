@@ -44,7 +44,7 @@ LAST_OUTPUT=$(echo "$INPUT" | jq -r '.transcript[-1].content // ""' 2>/dev/null 
 
 # Check for completion promise
 if [ -n "$COMPLETION_PROMISE" ]; then
-  if echo "$LAST_OUTPUT" | grep -q "<promise>$COMPLETION_PROMISE</promise>"; then
+  if echo "$LAST_OUTPUT" | grep -qF "<promise>${COMPLETION_PROMISE}</promise>"; then
     # Completion detected! Clean up and exit
     rm -f "$LOOP_STATE_FILE"
     echo '{"decision": "allow", "message": "Ralph loop completed successfully!"}'
@@ -93,9 +93,5 @@ When ALL tasks are complete, output: <promise>${COMPLETION_PROMISE:-COMPLETE}</p
 $PROMPT"
 
 # Return the block decision with the new prompt
-cat << EOF
-{
-  "decision": "block",
-  "message": "$SYSTEM_MSG"
-}
-EOF
+jq -n --arg decision "block" --arg message "$SYSTEM_MSG" \
+  '{decision: $decision, message: $message}'
